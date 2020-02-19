@@ -1,0 +1,159 @@
+<h2>Candidate selection Form </h2>
+
+<mat-vertical-stepper>
+<mat-step>
+    <ng-template matStepLabel>Your SGS Employee ID</ng-template>
+    <mat-form-field>
+        <input matInput placeholder="Your SGS ID">
+    </mat-form-field>
+    <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>next</button>
+    </div>
+</mat-step>
+
+<mat-step>
+
+    <ng-template matStepLabel>Enter SGS Employee Name</ng-template>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <input type="text" placeholder="Enter SGS Employee Name" aria-label="Number" matInput
+                [formControl]="myControl" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+    <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>next</button>
+    </div>
+</mat-step>
+
+<mat-step>
+    <ng-template matStepLabel>Select Client Name</ng-template>
+    <mat-form-field>
+        <mat-label>Client Name</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="food">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>next</button>
+    </div>
+</mat-step>
+
+<mat-step>
+    <ng-template matStepLabel>Hiring Type </ng-template>
+     
+  <mat-radio-group >
+    <mat-radio-button value="1">C2H</mat-radio-button>
+    <mat-radio-button value="2">Direct Hire</mat-radio-button>
+    <mat-radio-button value="2">Fixed Term</mat-radio-button>
+
+  </mat-radio-group>
+  <div>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>next</button>
+</div>
+</mat-step>
+
+<mat-step>
+    <ng-template matStepLabel>Candidate Selection Date (MM/DD/YYYY) </ng-template>
+    <mat-form-field>
+        <mat-label>Selection date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker ></mat-datepicker>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>next</button>
+    </div>    
+</mat-step>
+
+<mat-step>
+    <ng-template matStepLabel>Internal Requirement ID - Enter the Internal Req ID - Contact your Manager / Lead</ng-template>
+    <mat-form-field>
+        <input matInput placeholder="Internal Requirement ID">
+    </mat-form-field>
+    <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>next</button>
+    </div>
+</mat-step>
+
+<mat-step>
+    <ng-template matStepLabel>Candidate Full Name</ng-template>
+    <mat-form-field>
+        <input matInput placeholder="Candidate name">
+    </mat-form-field>
+    <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>next</button>
+    </div>
+</mat-step>
+
+<mat-step>
+    <ng-template matStepLabel>Technology</ng-template>
+    <mat-form-field>
+        <input matInput placeholder="Skills">
+    </mat-form-field>
+    <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>next</button>
+    </div>
+</mat-step>
+
+<mat-step>
+    <ng-template matStepLabel>Experience Range </ng-template>
+    <mat-form-field>
+        <mat-label>Select exp range</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="exprange">
+            <mat-option *ngFor="let exprange of expranges" [value]="exprange.value">
+                {{exprange.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>next</button>
+    </div>
+</mat-step>
+
+<mat-step>
+
+    <ng-template matStepLabel>Location </ng-template>
+    <!-- <mat-form-field>
+    </mat-form-field> -->
+    <section class="example-section">
+        <div>
+        <mat-checkbox>Jan</mat-checkbox>
+        <mat-checkbox>Feb </mat-checkbox>
+        <mat-checkbox>Mar</mat-checkbox>
+        <mat-checkbox>April</mat-checkbox>
+        <mat-checkbox>May</mat-checkbox>
+        <mat-checkbox>June</mat-checkbox>
+        </div>
+        <div>
+        <mat-checkbox>July</mat-checkbox>
+        <mat-checkbox>Aug</mat-checkbox>
+        <mat-checkbox>Sep</mat-checkbox>
+        <mat-checkbox>Oct</mat-checkbox>
+        <mat-checkbox>Nov</mat-checkbox>
+        <mat-checkbox>Dec</mat-checkbox>
+        </div>
+    </section>
+    <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Submit</button>
+    </div>
+</mat-step>
+
+
+</mat-vertical-stepper>

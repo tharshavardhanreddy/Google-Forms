@@ -1,0 +1,17 @@
+.example {
+    margin: 10px;
+  }
+
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+    margin-bottom: 10px;
+  } 
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  .mat-checkbox{
+    margin-right: 10px;
+  }

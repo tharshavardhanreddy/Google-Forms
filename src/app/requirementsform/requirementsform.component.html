@@ -1,0 +1,233 @@
+<h2>Requirements Form </h2>
+
+
+<mat-vertical-stepper>
+
+    <mat-step>
+        <ng-template matStepLabel>New Requirement or Drive</ng-template>
+        <mat-checkbox class="example">New Requirment</mat-checkbox>
+        <mat-checkbox class="example">Drive!</mat-checkbox>
+        <div>
+            <button mat-button matStepperNext>next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Client Requirement ID - If not there mention NA</ng-template>
+        <mat-form-field>
+            <input matInput placeholder="Client Requirement ID">
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Requirement received date (MM/DD/YYYY) </ng-template>
+        <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker ></mat-datepicker>
+          </mat-form-field>
+                  
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Enter Client Name</ng-template>
+        <mat-form-field>
+            <mat-label>Client Name</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="food">
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Hiring Mode</ng-template>
+         
+      <mat-radio-group >
+        <mat-radio-button value="1">C2H</mat-radio-button>
+        <mat-radio-button value="2">Direct Hire</mat-radio-button>
+        <mat-radio-button value="2">Fixed Term</mat-radio-button>
+
+      </mat-radio-group>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>next</button>
+    </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Experience Range From </ng-template>
+        <mat-form-field>
+            <mat-label>Select exp range</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="exprange">
+                <mat-option *ngFor="let exprange of expranges" [value]="exprange.value">
+                    {{exprange.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>next</button>
+        </div>
+    </mat-step>
+
+    
+    <mat-step>
+
+        <ng-template matStepLabel>Experience Range Notes  </ng-template>
+        <mat-form-field>
+            <input matInput placeholder="Notes" >
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+
+        <ng-template matStepLabel>Skillset / Technology </ng-template>
+        <mat-form-field>
+            <input matInput placeholder="Skills" >
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+
+        <ng-template matStepLabel>Location </ng-template>
+        <!-- <mat-form-field>
+        </mat-form-field> -->
+        <section class="example-section">
+            <div>
+            <mat-checkbox>Bangalore</mat-checkbox>
+            <mat-checkbox>Pune</mat-checkbox>
+            <mat-checkbox>Chennai</mat-checkbox>
+            <mat-checkbox>Hyderabad</mat-checkbox>
+            <mat-checkbox>Mumbai</mat-checkbox>
+            </div>
+            <div>
+            <mat-checkbox>Gurgaon</mat-checkbox>
+            <mat-checkbox>Kolkota</mat-checkbox>
+            <mat-checkbox>Delhi</mat-checkbox>
+            <mat-checkbox>Delhi NCR</mat-checkbox>
+            </div>
+            <div>
+            <mat-checkbox>Noida</mat-checkbox>
+            <mat-checkbox>Thane</mat-checkbox>
+            <mat-checkbox>Nagpur</mat-checkbox>
+            <mat-checkbox>Kochi</mat-checkbox>
+            </div>
+            <div>
+            <mat-checkbox>Ahmedabad</mat-checkbox>
+            <mat-checkbox>Indore</mat-checkbox>
+            <mat-checkbox>Coimbatore</mat-checkbox>
+            <mat-checkbox>Dubai</mat-checkbox>
+            </div>
+          </section>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Number of Positions</ng-template>
+        <mat-form-field>
+            <mat-label>Positions</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="position">
+                <mat-option *ngFor="let position of positions" [value]="position.value">
+                    {{position.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Sellcraft Account Manager</ng-template>
+        <mat-form-field>
+            <mat-label>Sellcraft Manager</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="manager">
+                <mat-option *ngFor="let manager of managers" [value]="manager.value">
+                    {{manager.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+
+        <ng-template matStepLabel>Sellcraft SPOC </ng-template>
+        <mat-form-field>
+            <input matInput placeholder="SPOC from Sellcraft" >
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+
+        <ng-template matStepLabel>Client SPOC</ng-template>
+        <mat-form-field>
+            <input matInput placeholder="SPOC from client" >
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Created By</ng-template>
+        <mat-form-field>
+            <mat-label>Created by Sellcraft Manager</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="created">
+                <mat-option *ngFor="let created of createds" [value]="created.value">
+                    {{created.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+
+        <ng-template matStepLabel>Notes (Drive Date etc) </ng-template>
+        <mat-form-field>
+            <input matInput placeholder="Notes" >
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Submit</button>
+        </div>
+    </mat-step>
+
+
+</mat-vertical-stepper>
+
