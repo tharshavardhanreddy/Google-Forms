@@ -1,31 +1,31 @@
-<mat-drawer-container fullscreen class="example-container">
+<!-- <mat-drawer-container fullscreen class="example-container">
     <mat-drawer  mode="fixed" opened>
         <img src="https://i.postimg.cc/XX637GW0/sell.png" alt="logo">
         <h1>SELLCRAFT <br><span>GLOBAL</span><br> SOLUTIONS</h1>
-    </mat-drawer>
-    
+    </mat-drawer> -->
 
-<h2>Dailylog for SGS </h2>
+<div class="fullcontainer">
 
+    <mat-toolbar color="primary">
+        <span class="fill-remaining-space"></span>
+        <span>Dailylog for SGS</span>
+        <span class="fill-remaining-space"></span>
+    </mat-toolbar>
 
-<mat-vertical-stepper>
-    <mat-step>
+</div>
 
-        <ng-template matStepLabel>Enter SGS Employee ID</ng-template>
-        <mat-form-field>
-            <input matInput placeholder="SGS ID">
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperNext>next</button>
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <mat-form-field>
+                <input matInput placeholder="SGS ID">
+            </mat-form-field>
         </div>
-    </mat-step>
 
+        <div class="col">
 
-    <mat-step>
-
-        <ng-template matStepLabel>Enter SGS Employee Name</ng-template>
-        <form class="example-form">
-            <mat-form-field class="example-full-width">
+            <mat-form-field class="example-half-width">
                 <input type="text" placeholder="Enter SGS Employee Name" aria-label="Number" matInput
                     [formControl]="myControl" [matAutocomplete]="auto">
                 <mat-autocomplete #auto="matAutocomplete">
@@ -34,259 +34,165 @@
                     </mat-option>
                 </mat-autocomplete>
             </mat-form-field>
-        </form>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
         </div>
-    </mat-step>
 
-    <mat-step>
-        <ng-template matStepLabel>Enter Client Name</ng-template>
-        <mat-form-field>
-            <mat-label>Client Name</mat-label>
-            <mat-select [(ngModel)]="selectedValue" name="food">
-                <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
+        <div class="col">
+
+            <mat-form-field>
+                <mat-label>Client Name</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="food">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                        {{food.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
-    </mat-step>
 
-    <mat-step>
 
-        <ng-template matStepLabel>Internal Requirement ID - Enter the Internal Req ID</ng-template>
-        <mat-form-field>
-            <input matInput placeholder="Internal Requirement ID">
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperNext>next</button>
+        <div class="col">
+
+            <mat-form-field>
+                <input matInput placeholder="Internal Requirement ID">
+            </mat-form-field>
         </div>
-    </mat-step>
 
+        <div class="col">
 
-    <mat-step>
-        <ng-template matStepLabel>Hiring Type of the Requirement ID</ng-template>
-         
-      <mat-radio-group >
-        <mat-radio-button value="1">C2H</mat-radio-button>
-        <mat-radio-button value="2">Direct Hire</mat-radio-button>
-        <mat-radio-button value="2">Fixed Term</mat-radio-button>
+            <mat-radio-group>
+                <mat-radio-button value="1">C2H</mat-radio-button>
+                <mat-radio-button value="2">Direct Hire</mat-radio-button>
+                <mat-radio-button value="2">Fixed Term</mat-radio-button>
 
-      </mat-radio-group>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>next</button>
+            </mat-radio-group>
+        </div>
+
+        <div class="col">
+
+            <mat-form-field>
+                <mat-label>Source from</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="source">
+                    <mat-option *ngFor="let source of sources" [value]="source.value">
+                        {{source.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+
+            <mat-form-field>
+                <input matInput placeholder="Number of Profiles" disabled>1
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+
+            <mat-form-field>
+                <input matInput placeholder="Full Name ">
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+
+            <mat-form-field>
+                <input matInput placeholder="Mobile Number">
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+
+            <mat-form-field>
+                <input matInput placeholder="Email ID">
+            </mat-form-field>
+        </div>
     </div>
-    </mat-step>
+    <div class="row">
+        <div class="col">
 
-    <mat-step>
-        <ng-template matStepLabel>Enter Source</ng-template>
-        <mat-form-field>
-            <mat-label>Source from</mat-label>
-            <mat-select [(ngModel)]="selectedValue" name="source">
-                <mat-option *ngFor="let source of sources" [value]="source.value">
-                    {{source.viewValue}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
+            <mat-form-field>
+                <mat-label>Select exp range</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="exprange">
+                    <mat-option *ngFor="let exprange of expranges" [value]="exprange.value">
+                        {{exprange.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
-    </mat-step>
 
-    <mat-step>
+        <div class="col">
 
-        <ng-template matStepLabel>Number of Profiles Submitted to Client </ng-template>
-        <mat-form-field>
-            <input matInput placeholder="Number of Profiles" disabled>1
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
+            <mat-form-field>
+                <mat-label>Select notice period</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="notice">
+                    <mat-option *ngFor="let notice of notices" [value]="notice.value">
+                        {{notice.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
-    </mat-step>
 
-    <mat-step>
+        <div class="col">
 
-        <ng-template matStepLabel>Candidate Full Name  </ng-template>
-        <mat-form-field>
-            <input matInput placeholder="Full Name " >
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
+            <mat-form-field>
+                <mat-label>Candidates Consent</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="consent">
+                    <mat-option *ngFor="let consent of consents" [value]="consent.value">
+                        {{consent.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
-    </mat-step>
 
-    <mat-step>
-        <ng-template matStepLabel>Candidate's Mobile Number </ng-template>
+        <div class="col">
 
-        <mat-form-field>
-            <input matInput placeholder="Mobile Number">
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
+            <mat-form-field>
+                <input matInput placeholder="City">
+            </mat-form-field>
         </div>
-    </mat-step>
-    
-    <mat-step>
 
-        <ng-template matStepLabel>Candidate Email ID  </ng-template>
-        <mat-form-field>
-            <input matInput placeholder="Email ID" >
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
+        <div class="col">
+
+            <mat-radio-group>
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+                <mat-radio-button value="2">May be</mat-radio-button>
+
+            </mat-radio-group>
         </div>
-    </mat-step>
 
+        <div class="col">
 
-    <mat-step>
-        <ng-template matStepLabel>Candidate experience Range </ng-template>
-        <mat-form-field>
-            <mat-label>Select exp range</mat-label>
-            <mat-select [(ngModel)]="selectedValue" name="exprange">
-                <mat-option *ngFor="let exprange of expranges" [value]="exprange.value">
-                    {{exprange.viewValue}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
+            <mat-form-field>
+                <input matInput placeholder="Current CTC">
+            </mat-form-field>
         </div>
-    </mat-step>
 
-    <mat-step>
-        <ng-template matStepLabel>Candidate notice Period *</ng-template>
-        <mat-form-field>
-            <mat-label>Select notice period</mat-label>
-            <mat-select [(ngModel)]="selectedValue" name="notice">
-                <mat-option *ngFor="let notice of notices" [value]="notice.value">
-                    {{notice.viewValue}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
+        <div class="col">
+
+            <mat-form-field>
+                <input matInput placeholder="Expected CTC">
+            </mat-form-field>
         </div>
-    </mat-step>
 
-    <mat-step>
-        <ng-template matStepLabel>Candidates Consent on Hire Type </ng-template>
-        <mat-form-field>
-            <mat-label>Candidates Consent</mat-label>
-            <mat-select [(ngModel)]="selectedValue" name="consent">
-                <mat-option *ngFor="let consent of consents" [value]="consent.value">
-                    {{consent.viewValue}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
+        <div class="col">
+
+            <mat-form-field>
+                <input matInput placeholder="skills">
+            </mat-form-field>
         </div>
-    </mat-step>
 
-    <mat-step>
+        <div class="col">
 
-        <ng-template matStepLabel>Preferred Location  </ng-template>
-        <mat-form-field>
-            <input matInput placeholder="City" >
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
+            <mat-form-field>
+                <input matInput placeholder="Other Skills">
+            </mat-form-field>
         </div>
-    </mat-step>
 
-    <mat-step>
-        <ng-template matStepLabel>Relocation </ng-template>
-         
-      <mat-radio-group >
-        <mat-radio-button value="1">Yes</mat-radio-button>
-        <mat-radio-button value="2">No</mat-radio-button>
-        <mat-radio-button value="2">May be</mat-radio-button>
+        <div class="col">
 
-      </mat-radio-group>
+            <div class="form-group">
 
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>next</button>
+                <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+            </div>
+        </div>
     </div>
-    </mat-step>
-
-    <mat-step>
-
-        <ng-template matStepLabel>Current CTC-Annual   </ng-template>
-        <mat-form-field>
-            <input matInput placeholder="Current CTC" >
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
-        </div>
-    </mat-step>
-
-    <mat-step>
-
-        <ng-template matStepLabel>Expected CTC-Annual  </ng-template>
-        <mat-form-field>
-            <input matInput placeholder="Expected CTC" >
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
-        </div>
-    </mat-step>
-
-    <mat-step>
-
-        <ng-template matStepLabel>Technology / Skills  </ng-template>
-        <mat-form-field>
-            <input matInput placeholder="skills" >
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
-        </div>
-    </mat-step>
-
-    <mat-step>
-
-        <ng-template matStepLabel>Other Skills  </ng-template>
-        <mat-form-field>
-            <input matInput placeholder="Other Skills" >
-        </mat-form-field>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>next</button>
-        </div>
-    </mat-step>
-
-    <mat-step>
-        <ng-template matStepLabel>Choose File </ng-template>
-
-        <div class="form-group">
-           
-            <input type="file"
-                   id="file"
-                   (change)="handleFileInput($event.target.files)">
-        </div>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button >Submit</button>
-        </div>
-    </mat-step>
-
-
-</mat-vertical-stepper>

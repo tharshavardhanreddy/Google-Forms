@@ -91,14 +91,36 @@ export class DailylogComponent implements OnInit {
   filteredOptions: Observable<string[]>;
   
 
-  dailylogFormGroup: FormGroup;
+  // dailylogFormGroup: FormGroup;
 
   constructor(private fb: FormBuilder) { }
+
+  // dailyform:FormGroup = new FormGroup({
+  //   sgsempid: new FormControl('', Validators.required),
+  //   sgsempname: new FormControl('', Validators.required),
+  //   clientname: new FormControl('', Validators.required),
+  //   internalreqid: new FormControl('', Validators.required),
+  //   hiringtype: new FormControl('', Validators.required), 
+  //   source: new FormControl('', Validators.required),
+  //   profilecount: new FormControl('', Validators.required),
+  //   candidatename: new FormControl('', Validators.required),
+  //   candidatemobile: new FormControl('', Validators.required),
+  //   candidateemailild: new FormControl('', Validators.required),
+  //   experiencerange: new FormControl('', Validators.required),
+  //   noticeperiod: new FormControl('', Validators.required),
+  //   candidateconsent: new FormControl('', Validators.required),
+  //   preferredlocation: new FormControl('', Validators.required),
+  //   relocation: new FormControl('', Validators.required),
+  //   currentctc: new FormControl('', Validators.required),
+  //   expectedctc: new FormControl('', Validators.required),
+  //   skills: new FormControl('', Validators.required),
+  //   oskills: new FormControl('', Validators.required)
+  // });
  
   ngOnInit() {
-    this.dailylogFormGroup = this.fb.group({
-      firstCtrl: ['', Validators.required]
-    });
+    // this.dailylogFormGroup = this.fb.group({
+    //   firstCtrl: ['', Validators.required]
+    // });
      this.filteredOptions = this.myControl.valueChanges
       .pipe(
         startWith(''),

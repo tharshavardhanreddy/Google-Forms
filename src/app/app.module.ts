@@ -21,6 +21,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import { CandidateformComponent } from './candidateform/candidateform.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -48,7 +50,9 @@ import { CandidateformComponent } from './candidateform/candidateform.component'
     MatRadioModule,
     MatSidenavModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatToolbarModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
