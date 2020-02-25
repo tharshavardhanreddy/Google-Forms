@@ -8,25 +8,27 @@
 
     <mat-toolbar color="primary">
         <span class="fill-remaining-space"></span>
-        <span>Dailylog for SGS</span>
+        <span > SELLCRAFT GLOBAL SOLUTIONS DAILY LOG</span>
         <span class="fill-remaining-space"></span>
     </mat-toolbar>
 
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col">
 
+    <mat-grid-list cols="2" rowHeight="800px">
+    <mat-grid-tile>
+
+    <div class="row">
+        <div class="col" class="example-full-width">
             <mat-form-field>
-                <input matInput placeholder="SGS ID">
+                <input matInput placeholder="SGS Employee ID">
             </mat-form-field>
         </div>
 
         <div class="col">
-
-            <mat-form-field class="example-half-width">
-                <input type="text" placeholder="Enter SGS Employee Name" aria-label="Number" matInput
+            <mat-form-field>
+                <input type="text" placeholder="SGS Employee Name" aria-label="Number" matInput
                     [formControl]="myControl" [matAutocomplete]="auto">
                 <mat-autocomplete #auto="matAutocomplete">
                     <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
@@ -37,7 +39,6 @@
         </div>
 
         <div class="col">
-
             <mat-form-field>
                 <mat-label>Client Name</mat-label>
                 <mat-select [(ngModel)]="selectedValue" name="food">
@@ -50,26 +51,25 @@
 
 
         <div class="col">
-
             <mat-form-field>
                 <input matInput placeholder="Internal Requirement ID">
             </mat-form-field>
         </div>
 
         <div class="col">
-
-            <mat-radio-group>
-                <mat-radio-button value="1">C2H</mat-radio-button>
-                <mat-radio-button value="2">Direct Hire</mat-radio-button>
-                <mat-radio-button value="2">Fixed Term</mat-radio-button>
-
-            </mat-radio-group>
+            <mat-form-field>
+                <mat-label>Type of Hire</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="hire">
+                    <mat-option *ngFor="let hire of type" [value]="hire.value">
+                        {{hire.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
 
         <div class="col">
-
             <mat-form-field>
-                <mat-label>Source from</mat-label>
+                <mat-label>Source</mat-label>
                 <mat-select [(ngModel)]="selectedValue" name="source">
                     <mat-option *ngFor="let source of sources" [value]="source.value">
                         {{source.viewValue}}
@@ -79,38 +79,33 @@
         </div>
 
         <div class="col">
-
             <mat-form-field>
-                <input matInput placeholder="Number of Profiles" disabled>1
+                <input matInput placeholder="Profiles Submitted to Client" disabled>1
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+            <mat-form-field>
+                <input matInput placeholder="Candidate Full Name ">
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+            <mat-form-field>
+                <input matInput placeholder="Candidate Mobile Number">
+            </mat-form-field>
+        </div>
+
+        <div class="col">
+            <mat-form-field>
+                <input matInput placeholder="Candidate Email ID">
             </mat-form-field>
         </div>
 
         <div class="col">
 
             <mat-form-field>
-                <input matInput placeholder="Full Name ">
-            </mat-form-field>
-        </div>
-
-        <div class="col">
-
-            <mat-form-field>
-                <input matInput placeholder="Mobile Number">
-            </mat-form-field>
-        </div>
-
-        <div class="col">
-
-            <mat-form-field>
-                <input matInput placeholder="Email ID">
-            </mat-form-field>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-
-            <mat-form-field>
-                <mat-label>Select exp range</mat-label>
+                <mat-label> Experience Range</mat-label>
                 <mat-select [(ngModel)]="selectedValue" name="exprange">
                     <mat-option *ngFor="let exprange of expranges" [value]="exprange.value">
                         {{exprange.viewValue}}
@@ -118,11 +113,18 @@
                 </mat-select>
             </mat-form-field>
         </div>
+    </div>
+    
+</mat-grid-tile>
+
+    <mat-grid-tile>
+    <div class="row">
+       
 
         <div class="col">
 
             <mat-form-field>
-                <mat-label>Select notice period</mat-label>
+                <mat-label> Notice Period</mat-label>
                 <mat-select [(ngModel)]="selectedValue" name="notice">
                     <mat-option *ngFor="let notice of notices" [value]="notice.value">
                         {{notice.viewValue}}
@@ -134,7 +136,7 @@
         <div class="col">
 
             <mat-form-field>
-                <mat-label>Candidates Consent</mat-label>
+                <mat-label>Candidates Consent on Hire type</mat-label>
                 <mat-select [(ngModel)]="selectedValue" name="consent">
                     <mat-option *ngFor="let consent of consents" [value]="consent.value">
                         {{consent.viewValue}}
@@ -146,19 +148,29 @@
         <div class="col">
 
             <mat-form-field>
-                <input matInput placeholder="City">
+                <input matInput placeholder="Current Location">
             </mat-form-field>
         </div>
 
         <div class="col">
 
-            <mat-radio-group>
-                <mat-radio-button value="1">Yes</mat-radio-button>
-                <mat-radio-button value="2">No</mat-radio-button>
-                <mat-radio-button value="2">May be</mat-radio-button>
-
-            </mat-radio-group>
+            <mat-form-field>
+                <input matInput placeholder="Preferred Location">
+            </mat-form-field>
         </div>
+
+        <div class="col">
+
+            <mat-form-field>
+                <mat-label>Willing to Relocate</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="relocate">
+                    <mat-option *ngFor="let relocate of location" [value]="relocate.value">
+                        {{relocate.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
 
         <div class="col">
 
@@ -177,14 +189,14 @@
         <div class="col">
 
             <mat-form-field>
-                <input matInput placeholder="skills">
+                <input matInput placeholder="Technology/Skills">
             </mat-form-field>
         </div>
 
         <div class="col">
 
             <mat-form-field>
-                <input matInput placeholder="Other Skills">
+                <input matInput placeholder="Other skills">
             </mat-form-field>
         </div>
 
@@ -196,3 +208,10 @@
             </div>
         </div>
     </div>
+    </mat-grid-tile>
+</mat-grid-list>
+<div id="wrapper">
+    <button mat-raised-button color="primary">Submit</button>
+</div>
+
+</div>

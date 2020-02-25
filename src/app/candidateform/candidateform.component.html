@@ -2,18 +2,21 @@
 
     <mat-toolbar  color="primary">
         <span class="fill-remaining-space"></span>
-        <span>Candidate selection form</span>
+        <span>SELLCRAFT GLOBAL SOLUTIONS CANDIDATE SELECTION FORM </span>
         <span class="fill-remaining-space"></span>
     </mat-toolbar>
 
 </div>
 
 <div class="container">
+    <mat-grid-list cols="2" rowHeight="500px">
+        <mat-grid-tile>
+    
     <div class="row">
         <div class="col">
 
 <mat-form-field>
-    <input matInput placeholder="Your SGS ID">
+    <input matInput placeholder="SGS Employee ID">
 </mat-form-field>
 <br>
         </div>
@@ -21,7 +24,7 @@
         <div class="col">
 
 <mat-form-field class="example-full-width">
-    <input type="text" placeholder="Enter SGS Employee Name" aria-label="Number" matInput [formControl]="myControl"
+    <input type="text" placeholder="SGS Employee Full Name" aria-label="Number" matInput [formControl]="myControl"
         [matAutocomplete]="auto">
     <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
@@ -46,23 +49,21 @@
 </div>
 
 
-
 <div class="col">
-
-<mat-radio-group>
-    <mat-radio-button value="1">C2H</mat-radio-button>
-    <mat-radio-button value="2">Direct Hire</mat-radio-button>
-    <mat-radio-button value="2">Fixed Term</mat-radio-button>
-
-</mat-radio-group>
-
-<br>
+    <mat-form-field>
+        <mat-label>Type of Hire</mat-label>
+        <mat-select [(ngModel)]="selectedValue" name="hire">
+            <mat-option *ngFor="let hire of type" [value]="hire.value">
+                {{hire.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
 </div>
 
 <div class="col">
 
 <mat-form-field>
-    <mat-label>Selection date</mat-label>
+    <mat-label>Candidate Selection date</mat-label>
     <input matInput [matDatepicker]="picker">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
@@ -72,7 +73,8 @@
 </div>
 </div>
 
-
+</mat-grid-tile>
+<mat-grid-tile>
 <div class="row">
     <div class="col">
 
@@ -87,7 +89,7 @@
 <div class="col">
 
 <mat-form-field>
-    <input matInput placeholder="Candidate name">
+    <input matInput placeholder="Candidate Fullname">
 </mat-form-field>
 
 <br>
@@ -96,7 +98,7 @@
 <div class="col">
 
 <mat-form-field>
-    <input matInput placeholder="Skills">
+    <input matInput placeholder="Technology/Skills">
 </mat-form-field>
 <br>
 </div>
@@ -105,7 +107,7 @@
 <div class="col">
 
 <mat-form-field>
-    <mat-label>Select exp range</mat-label>
+    <mat-label>Select exprience Range</mat-label>
     <mat-select [(ngModel)]="selectedValue" name="exprange">
         <mat-option *ngFor="let exprange of expranges" [value]="exprange.value">
             {{exprange.viewValue}}
@@ -115,33 +117,25 @@
 <br>
 </div>
 
-
-
-<!-- <mat-form-field>
-    </mat-form-field> -->
     <div class="col">
-
-<section class="example-section">
-    <div>
-        <mat-checkbox>Jan</mat-checkbox>
-        <mat-checkbox>Feb </mat-checkbox>
-        <mat-checkbox>Mar</mat-checkbox>
-        <mat-checkbox>April</mat-checkbox>
-        <mat-checkbox>May</mat-checkbox>
-        <mat-checkbox>June</mat-checkbox>
-    </div>
-    <div>
-        <mat-checkbox>July</mat-checkbox>
-        <mat-checkbox>Aug</mat-checkbox>
-        <mat-checkbox>Sep</mat-checkbox>
-        <mat-checkbox>Oct</mat-checkbox>
-        <mat-checkbox>Nov</mat-checkbox>
-        <mat-checkbox>Dec</mat-checkbox>
-    </div>
-</section>
-</div>
+        <mat-form-field>
+            <mat-label>Expected Joinig Date</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="Date">
+                <mat-option *ngFor="let Date of year" [value]="Date.value">
+                    {{Date.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
 </div>
 
 
+
+</div>
+
+</mat-grid-tile>
+</mat-grid-list>
+<div id="wrapper">
+    <button mat-raised-button color="primary">Submit</button>
+</div>
 </div>

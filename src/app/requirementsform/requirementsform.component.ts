@@ -9,6 +9,11 @@ interface Food {
   viewValue: string;
 }
 
+interface Hire {
+  value: string;
+  viewValue: string;
+}
+
 interface exprange {
   value: string;
   viewValue: string;
@@ -36,11 +41,21 @@ interface created {
 })
 export class RequirementsformComponent implements OnInit {
 
+  location= new FormControl();
+  locations: string[] = ['Bangalore', 'Pune', 'Chennai', 'Hyderabad', 'Mumbai', 'Guragon','Kolkata','Delhi','Noida','Thane','Nagpur','Kochi','Ahmedabad','Indore','Coimbatore','Dubai'];
+
   foods: Food[] = [
     {value: 'Tcs-0', viewValue: 'TCS'},
     {value: 'Cognizant-1', viewValue: 'Cognizant'},
     {value: 'Wipro-2', viewValue: 'Wipro'}
   ];
+
+  type: Hire[] = [
+
+    { value: 'c2h', viewValue: 'C2H' },
+    { value: 'Direct', viewValue: ' Direct Hire' },
+    { value: 'Fixed', viewValue: 'Fixed Term' }
+  ]
 
   managers: manager[] = [
     {value: 'Harshada-0', viewValue: 'Harshada'},

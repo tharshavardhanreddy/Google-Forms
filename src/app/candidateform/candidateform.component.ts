@@ -10,6 +10,16 @@ interface Food {
   viewValue: string;
 }
 
+interface Hire {
+  value: string;
+  viewValue: string;
+}
+
+interface Date {
+  value:string;
+  viewValue: string;
+}
+
 interface exprange {
   value: string;
   viewValue: string;
@@ -22,11 +32,38 @@ interface exprange {
 })
 export class CandidateformComponent implements OnInit {
 
+
+
   foods: Food[] = [
     {value: 'Tcs-0', viewValue: 'TCS'},
     {value: 'Cognizant-1', viewValue: 'Cognizant'},
     {value: 'Wipro-2', viewValue: 'Wipro'}
   ];
+
+  year: Date[] = [
+    {value: 'Jan', viewValue: 'Jan 2020'},
+    {value: 'Feb', viewValue: 'February 2020'},
+    {value: 'Mar', viewValue: 'March 2020'},
+    {value: 'Apr', viewValue: 'April 2020'},
+    {value: 'May', viewValue: 'May 2020'},
+    {value: 'june', viewValue: 'June 2020'},
+    {value: 'July', viewValue: 'July 2020'},
+    {value: 'Aug', viewValue: 'August 2020'},
+    {value: 'Sep', viewValue: 'September 2020'},
+    {value: 'Oct', viewValue: 'October 2020'},
+    {value: 'Nov', viewValue: 'November 2020'},
+    {value: 'Dec', viewValue: 'December 2020'},
+
+
+  ];
+
+  type: Hire[] = [
+
+    { value: 'c2h', viewValue: 'C2H' },
+    { value: 'Direct', viewValue: ' Direct Hire' },
+    { value: 'Fixed', viewValue: 'Fixed Term' }
+  ]
+
 
   expranges: exprange[] = [
     {value: 'Zero-one-0', viewValue: 'zero-one'},

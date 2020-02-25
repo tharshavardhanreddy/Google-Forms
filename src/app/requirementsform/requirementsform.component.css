@@ -1,17 +1,37 @@
 .example {
-    margin: 10px;
-  }
+  margin: 10px;
+}
 
-  .mat-radio-button ~ .mat-radio-button {
-    margin-left: 16px;
-    margin-bottom: 10px;
-  } 
-  .example-section {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    height: 60px;
-  }
-  .mat-checkbox{
-    margin-right: 10px;
-  }
+
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.mat-checkbox {
+  margin-right: 10px;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto
+}
+
+mat-grid-list {
+  margin: 10px;
+  border: 1px solid #c7d2e5;
+  padding: 1;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+  width: 300px;
+}
+
+#wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
